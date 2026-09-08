@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="has-background-white-ter">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,45 +10,61 @@
     href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
   />
   <body>
-    <div>Enter your name</div>
-    <div class="is-flex">
-      <input id="input" class="input" type="text" />
-      <button class="button" onclick="displayWelcome()">Submit</button>
+   <div class="container m-6">
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter">
+         <div class="box" id="nameBox">
+          <div class="mb-2">Enter your name</div>
+           <div class="is-flex">
+            <input id="input" class="input mr-4" type="text">
+            <button class="button" onclick="start()">Start</button>
+           </div>
+          </div>
+    <div style="display: none;" id="healthBar" class="box">
+      <div id="nameTarget"></div>
+       
+     <progress id="health" class="progress is-danger" value="20" max="100">
+     </progress>
+     <div class="buttons">
+      <button class="button is-success" onclick="heal()">heal</button>
+      <button class="button is-danger" onclick="attack()">Attack</button>
+
+        </div>
+      </div>
     </div>
-    <div id="welcome"></div>
+  </div>
+</div>
+  
     <script>
-      /* const name = prompt("what is your name");
-      alert("Hi," + name + ".Nice to meat you");
-      let age = prompt("What is your birth year");
-      alert(2026 - age);
-      let number = prompt("tell us two number");
-      alert(number);
-      const width = prompt("tell us width");
-      const height = prompt("tell us height");
-      const area = width * height;
-      const number1 = Number(width);
-      const number2 = Number(height);
+     function start(){
 
-      const sum = number1 + number2;
-      const number3 = Number(sum);
+      const healthEl = document.getElementById("healthBar");
+      healthEl.style.display ="block"
 
-      const perimeter = number3 * 2;
-      alert("area=" + area);
-      alert("perimeter=" + perimeter);
-      const price = prompt("how much this coffee");
+      const nameEl = document.getElementById("nameBox");
+      nameEl.style.display = "none"
 
-      const item = prompt("how many would you like");
+      const inputEl = document.getElementById("input");
+      const myName=inputEl.value;
 
-      alert("Your total bill is." + price * item); 
-      const celsius = prompt("tsag agaar ymr bn");
-      alert(celsius + "Celsius");
+      document.getElementById("nameTarget").textContent = myName
 
-      alert("fahrenheit eer" + (celsius * 9) / 5 + 32);*/
-      function displayWelcome() {
-        const myInput = document.getElementById("input");
-        const welcomeEl = document.getElementById("welcome");
-        welcomeEl.textContent = "Welcome, " + myInput.value;
-      }
+     }
+     function heal(){
+      console.log("healing")
+      const healthEl = document.getElementById("health");
+      const myhealth=healthEl.value
+      console.log(myhealth)
+      healthEl.value= healthEl.value + 10;
+     }
+     function attack(){
+      console.log("attacking")
+      const healthEl = document.getElementById("health");
+      const myhealth=healthEl.value
+      console.log(myhealth)
+      healthEl.value= healthEl.value - 10;
+
+     }
     </script>
   </body>
 </html>
