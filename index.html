@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+  />
+  <body>
+    <div>Enter your name</div>
+    <div class="is-flex">
+      <input id="input" class="input" type="text" />
+      <button class="button" onclick="displayWelcome()">Submit</button>
+    </div>
+    <div id="welcome"></div>
+    <script>
+      /* const name = prompt("what is your name");
+      alert("Hi," + name + ".Nice to meat you");
+      let age = prompt("What is your birth year");
+      alert(2026 - age);
+      let number = prompt("tell us two number");
+      alert(number);
+      const width = prompt("tell us width");
+      const height = prompt("tell us height");
+      const area = width * height;
+      const number1 = Number(width);
+      const number2 = Number(height);
+
+      const sum = number1 + number2;
+      const number3 = Number(sum);
+
+      const perimeter = number3 * 2;
+      alert("area=" + area);
+      alert("perimeter=" + perimeter);
+      const price = prompt("how much this coffee");
+
+      const item = prompt("how many would you like");
+
+      alert("Your total bill is." + price * item); 
+      const celsius = prompt("tsag agaar ymr bn");
+      alert(celsius + "Celsius");
+
+      alert("fahrenheit eer" + (celsius * 9) / 5 + 32);*/
+      function displayWelcome() {
+        const myInput = document.getElementById("input");
+        const welcomeEl = document.getElementById("welcome");
+        welcomeEl.textContent = "Welcome, " + myInput.value;
+      }
+    </script>
+  </body>
+</html>
